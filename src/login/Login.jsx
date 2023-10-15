@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Container, Typography } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
+import { useAppThemeContext } from '../contexts/ThemeContexts';
 
 function Login() {
+  const theme = useTheme();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const { toggleTheme } = useAppThemeContext();
 
   const handleLogin = async () => {
     try {
@@ -27,7 +32,7 @@ function Login() {
   };
 
   return (
-    <Container>
+    <Box width="100vw" height="100vh" bgcolor={theme.palette.background.default}>
       <Typography>Login</Typography>
       <form>
         <input
@@ -42,10 +47,11 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button variant='contained' color='primary' onClick={handleLogin}>Entrar</Button>
+        <Button variant='contained' color='primary' onClick={toggleTheme}>MudarCorTheme</Button>
+        <Button variant='contained' color='primary' onClick={handleLogin}>Entra</Button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
-    </Container>
+    </Box>
   );
 }
 

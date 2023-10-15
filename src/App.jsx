@@ -1,11 +1,12 @@
-import { AppThemeProvide } from './contexts/ThemeContexts';
-import Login from './login/Login';
+
+import AppThemeProvider from './contexts/ThemeContexts.jsx';
+import Login from './login/Login.jsx';
 
 function App() {
   return (
-    <AppThemeProvide>
+     <AppThemeProvider>
       <Login />
-    </AppThemeProvide>   
+     </AppThemeProvider>
   );
 }
 
