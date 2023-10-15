@@ -1,14 +1,11 @@
-
-import { ThemeProvider} from '@mui/material';
-import './App.css';
+import { AppThemeProvide } from './contexts/ThemeContexts';
 import Login from './login/Login';
-import { lightTheme } from './common/theme';
 
 function App() {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <AppThemeProvide>
       <Login />
-    </ThemeProvider>
+    </AppThemeProvide>   
   );
 }
 

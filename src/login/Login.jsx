@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container, Typography } from '@mui/material';
 
-
-
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
