@@ -1,8 +1,48 @@
-# React + Vite
+# Todolist App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Todolist application built in React.js with Vite and Material-UI 5. It communicates with a Todolist API in Java created with Spring and Maven.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add, edit, and remove tasks from your list.
+- Mark tasks as completed or pending.
+- View your tasks in an organized list.
+
+## Requirements
+
+Make sure you have the following requirements installed:
+
+- Node.js
+- npm (Node.js package manager)
+
+## How to Run
+
+1. Clone this repository:
+
+   ```shell
+   git clone https://github.com/nelson2804/todolist-web.git
+   cd todolist-app
+Install the dependencies:
+
+shell
+Copy code
+npm install
+Start the application:
+
+shell
+Copy code
+npm run dev
+The application will be available at http://localhost:3000 in your web browser.
+
+API Configuration
+Make sure to configure the Todolist API URL in the application's configuration file. This will allow the application to communicate with the Java API.
+
+javascript
+Copy code
+// src/config.js
+export const API_URL = 'http://localhost:8080/api'; // Change the URL as needed
+Contribution
+Feel free to contribute to this project. You can open issues or send pull requests for improvements.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
