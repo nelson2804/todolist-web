@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Box, Button, Typography, useTheme } from '@mui/material';
+import { Box, Button, TextField, useTheme } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { useAppThemeContext } from '../contexts/ThemeContexts';
 
 function Login() {
@@ -32,25 +35,63 @@ function Login() {
   };
 
   return (
-    <Box width="100vw" height="100vh" bgcolor={theme.palette.background.default}>
-      <Typography>Login</Typography>
-      <form>
-        <input
-          type="text"
-          placeholder="Nome de usuário"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+    <Box
+      width="100vw"
+      height="100vh"
+      
+      display="flex"
+      bgcolor="#009688"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box
+        width="400px"
+        height="500px"
+        borderRadius={7}
+        bgcolor={theme.palette.background.default}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <PersonIcon
+          sx={{
+            fontSize: 200,
+            color: "#009688",
+          }}
         />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button variant='contained' color='primary' onClick={toggleTheme}>MudarCorTheme</Button>
-        <Button variant='contained' color='primary' onClick={handleLogin}>Entra</Button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-      </form>
+        <Box
+          width="80%"
+          padding={2}
+          display="flex" 
+          flexDirection="column"
+          gap={2}
+          >
+          <TextField
+            type="text"
+            placeholder="Nome de usuário"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <TextField
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button variant="contained" color="primary" onClick={handleLogin}>
+            Entra
+          </Button>
+          <Button variant="contained" color="primary" onClick={toggleTheme}>
+            {theme.palette.mode === 'dark' ? (
+              <Brightness4Icon  /> 
+            ) : (
+              <NightsStayIcon />
+            )}
+          </Button>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </Box>
+      </Box>
     </Box>
   );
 }
