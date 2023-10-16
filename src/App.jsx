@@ -1,12 +1,14 @@
-
+import { BrowserRouter } from 'react-router-dom';
 import AppThemeProvider from './contexts/ThemeContexts.jsx';
-import Login from './login/Login.jsx';
+import { AppRoutes } from './routes/index.jsx';
 
 function App() {
   return (
-     <AppThemeProvider>
-      <Login />
-     </AppThemeProvider>
+    <BrowserRouter>
+      <AppThemeProvider>
+        <AppRoutes />
+      </AppThemeProvider>
+    </BrowserRouter> 
   );
 }
 
